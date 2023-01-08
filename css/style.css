@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+
+
+
+:root {
+  --primary-color: #222;
+  --secondary-color: #fff;
+  --overlay-color: rgba(100, 100, 100 , 0.85);
+  --menu-speed: 0.75s;
+  --normalized-font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: var(--normalized-font-size);
+  
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  line-height: 1.4;
+  background-color: black;
+}
+
+
+.container {
+  max-width: 2000px;
+  margin: auto;
+  overflow: hidden;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 1rem;
+}
+
+
+.centered-text {
+  text-align: center;
+}
+.border-2px-primary {
+  border: 2px solid var(--primary-color);
+}
+.border-2px-secondary {
+  border: 2px solid var(--secondary-color);
+}
+.bottom-border-3px-secondary {
+  border-bottom: 3px solid var(--secondary-color);
+}
+.bg-primary {
+  background-color: var(--primary-color);
+}
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+.bg-overlay {
+  background-color: rgba(100, 100, 100 , 0.85);
+}
+.full-width {
+  width: 100%;
+}
+.text-primary {
+  color: var(--primary-color);
+}
+.text-secondary {
+  color: var(--secondary-color);
+}
+.xxl-font {
+  font-size: 2.5rem;
+}
+.xl-font {
+  font-size: 2rem;
+}
+.quarter-width {
+  width: 25%;
+}
+.fifth-width {
+  width: 20%;
+}
+.swipe-animation {
+  animation: animation-swipe;
+  animation-duration: 3s;
+}
+.std-font {
+  font-size: 2.5rem;
+}
+.marg-top-1 {
+  margin-top: 1rem;
+}
+.no-list-dec {
+  list-style-type: none;
+}
+
+
+
+
+
+@keyframes animation-swipe {
+  from { 
+    width: 1px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+#shadowBox {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.2);
+  /* Black w/opacity/see-through */
+  border: 3px solid;
+}
+
+.desktop-menu {
+  display: none;
+  background-color: var(--primary-color);
+  padding-bottom: 1rem;
+}
+.desktop-menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.desktop-menu ul li a {
+  margin-left: 1rem;
+  display: block;
+  font-size: xx-large;
+  width: fit-content;
+  text-align: center;
+  padding: 1rem;
+  border-bottom: var(--primary-color) 1px solid;
+  color: var(--secondary-color);
+  padding: 0 3rem;
+  position: relative;
+}
+/*.desktop-menu ul li a:hover {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}*/
+
+
+
+.desktop-menu ul li a:before {
+  content: '';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  transform: scale(0);
+  transform-origin: left;
+  transition: all 0.5s;
+}
+
+.desktop-menu ul li a:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  background-color: var(--secondary-color);
+  transform: scale(0);
+  transform-origin: right;
+  transition: all 0.5s;
+}
+
+
+ul li a:hover:before,
+ul li a:hover:after {
+  transform: scale(1);
+}
+
+.my-image {
+  width: 100%;
+}
+.my-paragraph {
+  width: 100%;
+  margin: 2rem 0;
+  font-size: x-large;
+}
+.section {
+  height: 100vh;
+  margin-top: 9rem;
+}
+.section1 {
+  margin: auto;
+  width: 100%;
+}
+
+@media(min-width:900px) {
+  .section {
+    height: 0;
+    margin-top: 10rem;  
+  }
+  p {
+    text-align: center;
+  }
+  .aboutme-p {
+    width: 75%;
+    margin: auto;
+  }  
+  .container {
+    display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px; 
+    height: 100vh;
+  } 
+  
+    
+    .section1 { grid-area: 1 / 1 / 4 / 4; }
+    .section4 { grid-area: 1 / 4 / 4 / 7; }
+    .section3 { grid-area: 4 / 1 / 6 / 7; }
+      
+      .section4 { grid-area: 1 / 4 / 4 / 7; }
+      .section3 { grid-area: 4 / 1 / 6 / 7; }
+      .section2 { grid-area: 1 / 1 / 4 / 2; }
+      .section1 { grid-area: 1 / 2 / 4 / 4; }
+
+  .menu-wrap {
+    display: none;
+  }
+  .desktop-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+  }
+  .section1 {
+    margin: auto;
+  }
+  .section1 div {
+    margin: 2rem;
+  }
+  
+  .my-paragraph {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+}
